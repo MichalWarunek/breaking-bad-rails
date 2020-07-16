@@ -14,9 +14,10 @@ class Api::V1::CharactersController < ApplicationController
     @character.update_attribute(:deleted, true)
   end
 
-  # def create
-  #    @character.save
-  # end
+  def create
+     @character = Character.new(character_params)
+     @character.save
+  end
 
   def update
     @character = Character.find(params[:id])
