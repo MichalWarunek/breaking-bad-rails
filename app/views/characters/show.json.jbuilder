@@ -1,0 +1,1 @@
+json.extract! @character, :id, :name, :status, :nickname, :portrayed, :img
