@@ -24,9 +24,14 @@ class Api::V1::CharactersController < ApplicationController
     @character.update(character_params)
   end
 
+  def attach_image
+    @character = Character.find(params[:id])
+    @character.image.attach(params[:image])
+  end
+
   private
 
   def character_params
-    params.require(:character).permit(:id, :status, :nickname, :portrayed, :img, :name)
+    params.require(:character).permit(:id, :status, :nickname, :portrayed, :img, :name, :image)
   end
 end
