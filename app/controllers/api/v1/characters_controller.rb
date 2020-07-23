@@ -1,6 +1,6 @@
 class Api::V1::CharactersController < ApplicationController
   def index
-    @characters = Character.where(deleted: false)
+    @characters = Character.where(deleted: false).order('id DESC')
     render 'characters/index.json.jbuilder'
   end
 
